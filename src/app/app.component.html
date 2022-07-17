@@ -1,5 +1,8 @@
 <mat-toolbar color="primary">
-  Sign up flow with firebase
+  <span>
+    <img src="logomakr.com/app/4vP1Ag" width="80px" alt="logo">
+    BankVerve
+  </span>
   <span>
     <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
       <button mat-button (click)="logout()">

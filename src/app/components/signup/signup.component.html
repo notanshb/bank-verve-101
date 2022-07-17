@@ -1,1 +1,61 @@
-<p>signup works!</p>
+<div class="form-container mat-elevation-z5">
+  <h1>Sign Up to Get Your Bank at Your Fingertips!</h1>
+  <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <input matInput placeholder="Ex., John" type="text" formControlName="firstName">
+      <mat-error *ngIf="firstName?.errors?.['required']">
+        First name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Ex., Smith" type="text" formControlName="lastName">
+      <mat-error *ngIf="lastName?.errors?.['required']">
+        Last name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email address" type="email" formControlName="email">
+      <mat-error *ngIf="email?.errors?.['required']">
+        Email address is required
+      </mat-error>
+      <mat-error *ngIf="email?.errors?.['email']">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Mobile No." type="number" formControlName="mobile">
+      <mat-error *ngIf="mobile?.errors?.['required']">
+        Phone number is required
+      </mat-error>
+      <mat-error *ngIf="mobile?.errors?.['maxLength(10)']">
+        Please enter a valid phone number (10 digits)
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field color="primary">
+      <input matInput type="password" placeholder="Password" formControlName="password">
+      <mat-error *ngIf="password?.errors?.['required']">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field color="primary">
+      <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+      <mat-error *ngIf="confirmPassword?.errors?.['required']">
+        Confirm Password is required
+      </mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+      Passwords should match
+    </mat-error>
+    <div class="center margin-top">
+        <button type="submit" mat-raised-button color="primary">
+          Register
+        </button>
+    </div>
+    <span class="center margin-top">
+      Already a user?
+      <a class="sign-up-link" routerLink="/login">
+         Log in!
+      </a>
+    </span>
+  </form>
+</div>

@@ -60,5 +60,10 @@ export class SignupComponent implements OnInit {
     return this.signUpForm.get('confirmPassword');
   }
 
+  submit() {
+    if (!this.signUpForm.valid) {
+      return;
+    }
+  }
 
 }
