@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-sign-up'),
+      dir: require('path').join(__dirname, './coverage/bank-verve-101'),
       subdir: '.',
       reporters: [
         { type: 'html' },
