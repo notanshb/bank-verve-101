@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    mobile: new FormControl('', [Validators.required, Validators.maxLength(10)]),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
   },
@@ -46,10 +45,6 @@ export class SignupComponent implements OnInit {
 
   get email() {
     return this.signUpForm.get('email');
-  }
-
-  get mobile() {
-    return this.signUpForm.get('mobile');
   }
 
   get password() {

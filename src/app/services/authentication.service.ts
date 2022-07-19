@@ -7,7 +7,7 @@ import { Auth,
          updateProfile,
          user } from '@angular/fire/auth';
 import { from,
-         Observable } from 'rxjs';
+         Observable } from 'rxjs/';
 import { switchMap } from 'rxjs/operators';
 
 @Injectable({
@@ -23,12 +23,11 @@ export class AuthenticationService {
     return from(signInWithEmailAndPassword(this.auth, username, password));
   }
 
-  // signUp(email: string, password: string): Observable<UserCredential> {
-  //   return from(createUserWithEmailAndPassword(this.auth, email, password))
-  //   .pipe(
-  //     switchMap(({ user }) => updateProfile(user, {displayName: name}))
-  //   );
-  // }
+  signUp(firstName?: string, email?: string, password?: string): Observable<UserCredential> {
+   return from(createUserWithEmailAndPassword(this.auth!, email!, password!)).pipe(
+      switchMap(({ user }) => updateProfile(user, { displayName: firstName }))
+    )
+  }
 
   logout() {
     return from(this.auth.signOut());
