@@ -1,0 +1,38 @@
+mat-sidenav{
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.content{
+  height: calc(100vh - 98px);
+  margin: 16px;
+  margin-left: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+
+  border-radius: 10px;
+}
+
+.avatar{
+  align-self: center;
+  width: 120px;
+  border-radius: 60px;
+}
+
+.name{
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255,255,255,0.5);
+}

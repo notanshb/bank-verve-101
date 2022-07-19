@@ -22,7 +22,7 @@
         Please enter a valid email address
       </mat-error>
     </mat-form-field>
-    <mat-form-field>
+    <!-- <mat-form-field>
       <input matInput placeholder="Mobile No." type="number" formControlName="mobile">
       <mat-error *ngIf="mobile?.errors?.['required']">
         Phone number is required
@@ -30,7 +30,7 @@
       <mat-error *ngIf="mobile?.errors?.['maxLength(10)']">
         Please enter a valid phone number (10 digits)
       </mat-error>
-    </mat-form-field>
+    </mat-form-field> -->
     <mat-form-field color="primary">
       <input matInput type="password" placeholder="Password" formControlName="password">
       <mat-error *ngIf="password?.errors?.['required']">

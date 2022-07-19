@@ -23,10 +23,12 @@ export class AuthenticationService {
     return from(signInWithEmailAndPassword(this.auth, username, password));
   }
 
-  signUp(email: string, password: string): Observable<UserCredential> {
-    return from(createUserWithEmailAndPassword(this.auth, email, password))
-    .pipe(switchMap(({ user }) => updateProfile(user, )));
-  }
+  // signUp(email: string, password: string): Observable<UserCredential> {
+  //   return from(createUserWithEmailAndPassword(this.auth, email, password))
+  //   .pipe(
+  //     switchMap(({ user }) => updateProfile(user, {displayName: name}))
+  //   );
+  // }
 
   logout() {
     return from(this.auth.signOut());

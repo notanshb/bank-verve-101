@@ -1,3 +1,42 @@
 <div>
   <h1 *ngIf="user$ | async as user ">Welcome, {{ user.email }}</h1>
 </div>
+
+<!-- <mat-sidenav-container>
+  <mat-sidenav mode="side" opened="true">
+    <div class="profile-image">
+    <img
+      width="120"
+      height="120"
+      class="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"
+      src="user.photoURL ?? '/assets/images/image-placeholder.png'"
+    />
+    <button mat-mini-fab>
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+    <h4 class="name">John Smith</h4>
+    <p align="center" color="gray">Signature</p>
+
+    <mat-divider></mat-divider>
+  <mat-sidenav-content>
+      content
+  </mat-sidenav-content>
+  </mat-sidenav>
+</mat-sidenav-container> -->
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened="true">
+    <img class="avatar" src="../assets/placeholder.webp" alt="customer-image">
+    <h4 class="name">John Smith</h4>
+    <p align="center" color="gray">Signature</p>
+
+    <mat-divider></mat-divider>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <div class="content mat-elevation-z4">
+        Main content
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
